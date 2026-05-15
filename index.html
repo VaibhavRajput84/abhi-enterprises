@@ -24,6 +24,494 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 </head>
+<style>
+    body{
+    margin:0;
+    padding:0;
+    font-family:'Poppins',sans-serif;
+    background:#f8fafc;
+    color:#222;
+    overflow-x:hidden;
+}
+
+.hero-section h1{
+    font-size:62px;
+    font-weight:700;
+    line-height:1.2;
+    margin-bottom:25px;
+}
+
+.hero-description{
+    font-size:19px;
+    line-height:1.9;
+    color:#e5e7eb;
+}
+
+/* Navbar */
+
+.navbar{
+    background:rgba(10,25,47,0.92);
+    backdrop-filter:blur(12px);
+    padding:18px 0;
+    transition:0.4s;
+    box-shadow:0 8px 25px rgba(0,0,0,0.15);
+}
+
+.navbar-brand{
+    font-size:32px;
+    font-weight:700;
+    letter-spacing:1px;
+    color:#fff !important;
+}
+
+.nav-link{
+    color:#fff !important;
+    margin-left:18px;
+    font-size:16px;
+    font-weight:500;
+    position:relative;
+    transition:0.3s;
+}
+
+.nav-link:hover{
+    color:#ffb703 !important;
+}
+
+.nav-link::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0%;
+    height:2px;
+    background:#ffb703;
+    transition:0.4s;
+}
+
+.nav-link:hover::after{
+    width:100%;
+}
+
+/* Hero Section */
+
+.hero-section{
+    background:
+    linear-gradient(rgba(10,25,47,0.88), rgba(10,25,47,0.88)),
+    url('../assets/fire1.jpg');
+    background-size:cover;
+    background-position:center;
+    color:white;
+    padding:140px 0;
+    position:relative;
+}
+
+.hero-section h3{
+    font-size:23px;
+    line-height:1.9;
+    font-weight:400;
+    margin-bottom:25px;
+    color:#f1f1f1;
+}
+
+.hero-text{
+    font-size:24px;
+    font-weight:600;
+    color:#ffb703;
+    margin-bottom:25px;
+}
+
+.hero-img{
+    width:100%;
+    border-radius:30px;
+    box-shadow:0 20px 60px rgba(0,0,0,0.45);
+    transition:0.5s;
+}
+
+.hero-img:hover{
+    transform:scale(1.03);
+}
+
+/* Buttons */
+
+.btn-warning{
+    background:#ffb703 !important;
+    border:none !important;
+    color:#111 !important;
+    border-radius:60px;
+    padding:15px 38px;
+    font-weight:700;
+    font-size:18px;
+    transition:0.4s;
+    box-shadow:0 10px 30px rgba(255,183,3,0.35);
+}
+
+.btn-warning:hover{
+    transform:translateY(-5px);
+    background:#ffca2c !important;
+}
+
+/* Common Sections */
+
+.about-section,
+.services-section,
+.contact-section,
+.importance-section,
+.why-us{
+    padding:100px 0;
+}
+
+h2{
+    font-size:48px;
+    font-weight:700;
+    margin-bottom:20px;
+    color:#0a192f;
+}
+
+.about-section p,
+.importance-text{
+    font-size:18px;
+    line-height:1.9;
+    color:#666;
+    max-width:850px;
+    margin:auto;
+}
+
+/* Why Us */
+
+.why-us{
+    background:white;
+}
+
+.why-us .col-md-3{
+    background:#fff;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.07);
+    transition:0.4s;
+    font-weight:600;
+    margin-bottom:20px;
+}
+
+.why-us .col-md-3:hover{
+    transform:translateY(-10px);
+}
+
+/* Importance Section */
+
+.importance-section{
+    background:#f4f7fb;
+}
+
+.danger-box,
+.safe-box{
+    padding:40px;
+    border-radius:30px;
+    height:100%;
+    transition:0.4s;
+    box-shadow:0 15px 40px rgba(0,0,0,0.08);
+}
+
+.danger-box{
+    background:#fff5f5;
+    border-left:8px solid #dc3545;
+}
+
+.safe-box{
+    background:#f4fff7;
+    border-left:8px solid #198754;
+}
+
+.danger-box:hover,
+.safe-box:hover{
+    transform:translateY(-10px);
+}
+
+.danger-box h3,
+.safe-box h3{
+    margin-bottom:25px;
+    font-size:30px;
+    font-weight:700;
+}
+
+.danger-box h3{
+    color:#dc3545;
+}
+
+.safe-box h3{
+    color:#198754;
+}
+
+.danger-box ul li,
+.safe-box ul li{
+    margin-bottom:18px;
+    line-height:1.8;
+    font-size:17px;
+}
+
+/* Services */
+
+.services-section{
+    background:#fff;
+}
+
+.service-box{
+    background:white;
+    padding:25px;
+    border-radius:28px;
+    text-align:center;
+    height:100%;
+    transition:0.5s;
+    overflow:hidden;
+    position:relative;
+    box-shadow:0 15px 35px rgba(0,0,0,0.08);
+}
+
+.service-box:hover{
+    transform:translateY(-12px);
+    box-shadow:0 25px 55px rgba(0,0,0,0.15);
+}
+
+.service-img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    border-radius:22px;
+    margin-bottom:25px;
+    transition:0.5s;
+}
+
+.service-box:hover .service-img{
+    transform:scale(1.05);
+}
+
+.service-box h3{
+    font-size:28px;
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+.service-box p{
+    color:#666;
+    line-height:1.8;
+}
+
+/* Contact */
+
+.contact-section{
+    background:
+    linear-gradient(rgba(10,25,47,0.95), rgba(10,25,47,0.95)),
+    url('../assets/fire.jpg');
+    background-size:cover;
+    background-position:center;
+    color:white;
+}
+
+.contact-section h2{
+    color:white;
+}
+
+.contact-form .form-control{
+    height:60px;
+    border-radius:16px;
+    border:none;
+    padding-left:20px;
+    font-size:16px;
+}
+
+.contact-form .form-control:focus{
+    box-shadow:none;
+}
+
+.contact-box{
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.15);
+    padding:35px;
+    border-radius:25px;
+    backdrop-filter:blur(10px);
+    transition:0.4s;
+    height:100%;
+}
+
+.contact-box:hover{
+    transform:translateY(-8px);
+}
+
+.contact-box h4{
+    margin-bottom:15px;
+    font-weight:700;
+}
+
+/* Floating Buttons */
+
+.whatsapp-btn,
+.instagram-btn,
+.call-btn{
+    position:fixed;
+    right:20px;
+    color:white;
+    padding:5px 8px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+    z-index:999;
+    transition:0.4s;
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+}
+
+.whatsapp-btn:hover,
+.instagram-btn:hover,
+.call-btn:hover{
+    transform:scale(1.08);
+    color:white;
+}
+
+.whatsapp-btn{
+    bottom:20px;
+    background:#25d366;
+}
+
+.instagram-btn{
+    bottom:90px;
+    background:#e1306c;
+}
+
+.call-btn{
+    bottom:160px;
+    background:#0d6efd;
+}
+
+/* Loader */
+
+#loader{
+    position:fixed;
+    width:100%;
+    height:100vh;
+    background:white;
+    z-index:99999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.spinner{
+    width:70px;
+    height:70px;
+    border:7px solid #ddd;
+    border-top:7px solid #ffb703;
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+    100%{
+        transform:rotate(360deg);
+    }
+}
+
+/* Footer */
+
+footer{
+    background:#020817;
+    color:white;
+    text-align:center;
+    padding:22px;
+    font-size:15px;
+    letter-spacing:1px;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .hero-section{
+        text-align:center;
+        padding:90px 0;
+    }
+
+    .hero-section h3{
+        font-size:18px;
+        line-height:1.8;
+    }
+
+    .hero-text{
+        font-size:20px;
+    }
+
+    h2{
+        font-size:34px;
+    }
+
+    .service-img{
+        height:240px;
+    }
+
+    .whatsapp-btn,
+    .instagram-btn,
+    .call-btn{
+        padding:12px 18px;
+        font-size:14px;
+    }
+
+}
+.navbar-brand{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    text-decoration:none;
+}
+
+/* Logo Circle */
+
+.brand-logo{
+    width:55px;
+    height:55px;
+    border-radius:18px;
+    background:linear-gradient(135deg,#ffb703,#ff7b00);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 10px 25px rgba(255,183,3,0.35);
+    transition:0.4s;
+}
+
+.brand-logo i{
+    color:white;
+    font-size:24px;
+}
+
+/* Brand Text */
+
+.brand-text{
+    display:flex;
+    flex-direction:column;
+    line-height:1;
+}
+
+.brand-title{
+    font-size:28px;
+    font-weight:700;
+    color:darkred;
+    letter-spacing:1px;
+}
+
+.brand-sub{
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:4px;
+    color:white;
+    margin-top:4px;
+}
+
+/* Hover Effect */
+
+.navbar-brand:hover .brand-logo{
+    transform:rotate(-8deg) scale(1.08);
+}
+
+.navbar-brand:hover{
+    opacity:1;
+}
+</style>
 
 <body>
 
@@ -32,8 +520,17 @@
 
         <div class="container">
 
+
             <a class="navbar-brand" href="#">
-                Abhi Enterprises
+
+                <div class="brand-logo">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+
+                <div class="brand-text">
+                    <span class="brand-title">ABHI</span>
+                    <span class="brand-sub">ENTERPRISES</span>
+                </div>
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -82,8 +579,10 @@
                         Complete Fire Safety Solutions
                     </h1>
 
-                    <p class="hero-text">
-                        Fire Alarm | Free Site Inspection
+                    <p class="hero-description">
+                        Abhi Enterprises is a trusted fire safety service provider
+                        specializing in Fire Alarm Systems, Safety Inspection,
+                        Installation, Maintenance, and Emergency Support.
                     </p>
 
                     <a href="tel:8450928057" class="btn btn-warning btn-lg mt-3"> 
